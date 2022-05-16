@@ -30,7 +30,7 @@ nav {
             color: aliceblue;
             }
     }
-
+/*---------------------------------index-----------------------------------------*/
     header {
         display: flex;
         place-items: center;
@@ -79,7 +79,29 @@ nav {
         background-position: bottom;
         flex-direction: column;
     }
-
+    .opciones{
+        @extend .tituloG;
+        font-family: $fuente;
+    }
+    .listado{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 10px;
+        .lista{
+            height: 350px;
+            width: 350px;
+            background-color: rgb(58, 56, 56, 0.6);
+            border: 2px solid black;
+            margin: 5px;
+            font-family: $fuente;
+            font-size: 30px;
+            color: black;
+            padding: 5px;
+        }
+    }
+    /*------------------------------------------------fin index-----------------------------------------*/
     body {
         background-image: url(media/img/fondito.jpeg);
         background-position: bottom;
@@ -120,7 +142,7 @@ nav {
     $colores in $promos {
         .promo-#{$colores} {
             color: $colores;
-            background-color: black;
+            background-color: rgb(58, 56, 56, 0.8);
             height: 250px;
             width: 250px;
             border: 5px solid $colores;
