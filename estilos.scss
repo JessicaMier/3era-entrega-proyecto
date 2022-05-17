@@ -66,7 +66,7 @@ nav {
     }
 
     .jumbotron {
-        background-image: url(../media/img/vegetales.jpg);
+        background-image: url(./media/img/vegetales.jpg);
         height: 550PX;
         font-family: macondo, Times, serif;
         font-size: 60px;
@@ -192,44 +192,44 @@ nav {
         background-position: center;
     }
 
-    .item1 {
-        background-image: url(../media/img/empanadas.fritas.jpg);
+    .item1 { 
         @include back;
+        background-image: url(./media/img/empanadas.fritas.jpg);
     }
 
     .item2 {
-        background-image: url(../media/img/panaderia.jpg);
         @include back;
+        background-image: url(./media/img/panaderia.jpg);
     }
 
     .item3 {
-        background-image: url(../media/img/catering15.jpg);
         @include back;
+        background-image: url(./media/img/catering15.jpg);
     }
 
     .item4 {
-        background-image: url(../media/img/sushi.jpg);
         @include back;
+        background-image: url(./media/img/sushi.jpg);
     }
 
     .item5 {
-        background-image: url(../media/img/empanadas2.jpg);
         @include back;
+        background-image: url(./media/img/empanadas2.jpg);
     }
 
     .item6 {
-        background-image: url(../media/img/fideos.jpg);
         @include back;
+        background-image: url(./media/img/fideos.jpg);
     }
 
     .item7 {
-        background-image: url(../media/img/comidaGourmet.jpg);
         @include back;
+        background-image: url(./media/img/comidaGourmet.jpg);
     }
 
     .item8 {
-        background-image: url(../media/img/Pizza.jpg);
         @include back;
+        background-image: url(./media/img/Pizza.jpg);
     }
 
     @media only screen and (min-width:320px) and (max-width:479) {
