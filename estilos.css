@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0%;
   padding: 0%;
@@ -94,12 +95,34 @@ header .text-1 span {
 }
 .listado .lista .textList {
   font-family: cursive;
-  background-color: rgba(26, 24, 22, 0.8);
+  background-color: rgba(26, 24, 22, 0.9);
   color: aliceblue;
   font-size: 34px;
   text-align: center;
   text-shadow: 0px 0px 10px rgb(248, 243, 234), 0px 0px 10px rgb(28, 36, 34);
   border-radius: 10px;
+}
+.listado .uno {
+  background-image: url(media/img/fideos.jpg);
+  background-position: bottom;
+  list-style: none;
+  color: rgb(14, 13, 11);
+  font-weight: bold;
+  text-shadow: 0px 0px 10px rgb(248, 243, 234), 0px 0px 10px rgb(28, 36, 34);
+}
+.listado .dos {
+  background-image: url(media/img/empanadasNorteñas.jpg);
+  background-position: center;
+  background-size: cover;
+  font-weight: bold;
+  text-shadow: 0px 0px 10px rgb(248, 243, 234), 0px 0px 10px rgb(28, 36, 34);
+}
+.listado .tres {
+  background-image: url(media/img/tarta.jpg);
+  background-position: center;
+  background-size: cover;
+  font-weight: bold;
+  text-shadow: 0px 0px 10px rgb(248, 243, 234), 0px 0px 10px rgb(28, 36, 34);
 }
 
 /*------------------------------------------------fin index-----------------------------------------*/
@@ -133,7 +156,7 @@ body {
   justify-content: space-around;
 }
 
-/*-------------------mapa-------------------------------------*/
+/*-------------------mapa menu-------------------------------------*/
 .promo-orange {
   color: orange;
   background-color: rgba(58, 56, 56, 0.8);

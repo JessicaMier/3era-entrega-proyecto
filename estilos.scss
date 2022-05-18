@@ -111,15 +111,38 @@ header {
         padding: 5px;
         .textList{
             font-family: cursive;
-            background-color: rgb(26, 24, 22, 0.8);
+            background-color: rgb(26, 24, 22, 0.9);
             color: aliceblue;
             font-size: 34px;
             text-align: center;
             text-shadow: $sombreado;
             border-radius: 10px;
         }
+        }
+    .uno{
+        background-image: url(media/img/fideos.jpg);
+        background-position: bottom;
+        list-style: none;
+        color: rgb(14, 13, 11);
+        font-weight: bold;
+        text-shadow: $sombreado;
+        }
+    .dos{
+        background-image: url(media/img/empanadasNorteñas.jpg);
+        background-position: center;
+        background-size: cover;
+        font-weight: bold;
+        text-shadow: $sombreado;
     }
-}
+    .tres{
+        background-image: url(media/img/tarta.jpg);
+        background-position: center;
+        background-size: cover;
+        font-weight: bold;
+        text-shadow: $sombreado;
+    }
+    }
+
 
 /*------------------------------------------------fin index-----------------------------------------*/
 body {
@@ -152,7 +175,7 @@ body {
     justify-content: space-around;
 }
 
-/*-------------------mapa-------------------------------------*/
+/*-------------------mapa menu-------------------------------------*/
 $promos: (20px: orange,
     22px: grey,
     24px: aliceblue,
