@@ -5,22 +5,35 @@
   box-sizing: border-box;
 }
 
+/*---------------------------------------------nav------------------------------------*/
 nav {
   background-image: linear-gradient(rgb(235, 178, 72), rgb(226, 131, 6), rgb(240, 95, 27));
 }
 nav .nav-item {
   font-size: 18px;
+  color: black;
 }
-nav .nav-link {
+nav .nav-item .nav-link {
   font-size: 18px;
 }
-nav .active {
+nav .nav-item .nav-link:hover {
+  font-size: 22px;
+}
+nav .nav-item .active {
   font-size: 20px;
   text-shadow: 0px 0px 10px rgb(248, 243, 234), 0px 0px 10px rgb(28, 36, 34);
 }
-nav :hover {
-  font-size: 20px;
-  color: aliceblue;
+
+/*-----------------------------------estilos generales body------------------------*/
+body {
+  background-image: url(media/img/fondito.jpeg);
+  background-position: bottom;
+  background-size: cover;
+}
+
+.encabezado {
+  font-family: macondo, Times, serif;
+  text-shadow: 0px 0px 10px rgb(248, 243, 234), 0px 0px 10px rgb(28, 36, 34);
 }
 
 /*---------------------------------index-----------------------------------------*/
@@ -56,21 +69,8 @@ header .text-1 span {
   font-weight: bolder;
 }
 
-.jumbotron {
-  background-image: url(media/img/vegetales.jpg);
-  height: 550PX;
-  font-family: macondo, Times, serif;
-  font-size: 60px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: rgb(5, 5, 5);
-  text-shadow: 0px 0px 10px rgb(248, 243, 234), 0px 0px 10px rgb(28, 36, 34);
-  background-size: cover;
-  background-position: bottom;
-  flex-direction: column;
-}
-
+/*----------------------------------------------fin de encabezado index---------------------------------------------*/
+/*----------------------------------------------------inicio--------------------------------------------------------*/
 .opciones {
   font-family: macondo, Times, serif;
 }
@@ -89,18 +89,24 @@ header .text-1 span {
   border: 2px solid black;
   margin: 5px;
   font-family: macondo, Times, serif;
-  font-size: 30px;
+  font-size: 32px;
   color: black;
   padding: 5px;
+  border-radius: 10px;
 }
 .listado .lista .textList {
   font-family: cursive;
   background-color: rgba(26, 24, 22, 0.9);
-  color: aliceblue;
+  color: rgb(9, 10, 12);
   font-size: 34px;
   text-align: center;
   text-shadow: 0px 0px 10px rgb(248, 243, 234), 0px 0px 10px rgb(28, 36, 34);
   border-radius: 10px;
+}
+.listado .lista .estiloLista {
+  list-style: none;
+  text-align: center;
+  text-shadow: 0px 0px 10px rgb(248, 243, 234), 0px 0px 10px rgb(28, 36, 34);
 }
 .listado .uno {
   background-image: url(media/img/fideos.jpg);
@@ -110,38 +116,50 @@ header .text-1 span {
   font-weight: bold;
   text-shadow: 0px 0px 10px rgb(248, 243, 234), 0px 0px 10px rgb(28, 36, 34);
 }
-.listado .dos {
+.listado .dos, .listado .seis, .listado .cinco, .listado .cuatro, .listado .tres {
   background-image: url(media/img/empanadasNorteñas.jpg);
   background-position: center;
   background-size: cover;
   font-weight: bold;
   text-shadow: 0px 0px 10px rgb(248, 243, 234), 0px 0px 10px rgb(28, 36, 34);
+  list-style: none;
 }
 .listado .tres {
-  background-image: url(media/img/tarta.jpg);
-  background-position: center;
-  background-size: cover;
-  font-weight: bold;
-  text-shadow: 0px 0px 10px rgb(248, 243, 234), 0px 0px 10px rgb(28, 36, 34);
+  background-image: url(media/img/full.CanastitasCaprese.jpg);
+}
+.listado .cuatro {
+  background-image: url(media/img/triplesMiga.jpg);
+}
+.listado .cinco {
+  background-image: url(media/img/pizzaConJamon.jpg);
+}
+.listado .seis {
+  background-image: url(media/img/conservas.jpg);
 }
 
 /*------------------------------------------------fin index-----------------------------------------*/
-body {
-  background-image: url(media/img/fondito.jpeg);
-  background-position: bottom;
-  background-size: cover;
-}
-
-.encabezado {
+/*--------------------------------inicio de encabezado, menu, galeria, contacto y novedades-------------------------*/
+.jumbotron {
+  background-image: url(media/img/vegetales.jpg);
+  height: 550PX;
   font-family: macondo, Times, serif;
+  font-size: 60px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: rgb(5, 5, 5);
   text-shadow: 0px 0px 10px rgb(248, 243, 234), 0px 0px 10px rgb(28, 36, 34);
+  background-size: cover;
+  background-position: bottom;
+  flex-direction: column;
 }
 
+/*---------------------------fin encabezado general------------------------------------------------------------------*/
 /*-----------------------------------menu---------------------------*/
 .promoNueva {
   text-align: center;
   font-size: 30px;
-  display: block;
+  display: flex;
   background-color: black;
   color: aliceblue;
   text-transform: uppercase;
@@ -154,6 +172,7 @@ body {
 .promociones {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 /*-------------------mapa menu-------------------------------------*/
@@ -196,6 +215,7 @@ body {
   margin-bottom: 30px;
 }
 
+/*-------------------------fin de menu-----------------------*/
 /*-----------------------galeria-----------------------------*/
 .tituloG, .textoFormulario p, .opciones {
   text-align: center;
@@ -215,68 +235,58 @@ body {
   padding: 20px;
   gap: 10px;
 }
-
-.item {
+.grilla .item {
   border-radius: 7px;
   box-shadow: 0 0 5px darkslategray;
   transition: all 0.7s;
 }
-
-.item:hover {
+.grilla .item:hover {
   transform: scale(1.05);
   transition: all 0.7s;
 }
-
-.item1 {
+.grilla .item1 {
   border: 2px solid black;
   background-size: cover;
   background-position: center;
   background-image: url(media/img/empanadas.fritas.jpg);
 }
-
-.item2 {
+.grilla .item2 {
   border: 2px solid black;
   background-size: cover;
   background-position: center;
   background-image: url(media/img/panaderia.jpg);
 }
-
-.item3 {
+.grilla .item3 {
   border: 2px solid black;
   background-size: cover;
   background-position: center;
   background-image: url(media/img/catering15.jpg);
 }
-
-.item4 {
+.grilla .item4 {
   border: 2px solid black;
   background-size: cover;
   background-position: center;
   background-image: url(media/img/sushi.jpg);
 }
-
-.item5 {
+.grilla .item5 {
   border: 2px solid black;
   background-size: cover;
   background-position: center;
   background-image: url(media/img/empanadas2.jpg);
 }
-
-.item6 {
+.grilla .item6 {
   border: 2px solid black;
   background-size: cover;
   background-position: center;
   background-image: url(media/img/fideos.jpg);
 }
-
-.item7 {
+.grilla .item7 {
   border: 2px solid black;
   background-size: cover;
   background-position: center;
   background-image: url(media/img/comidaGourmet.jpg);
 }
-
-.item8 {
+.grilla .item8 {
   border: 2px solid black;
   background-size: cover;
   background-position: center;
@@ -285,7 +295,7 @@ body {
 
 @media only screen and (min-width: 320px) and (max-width: 479) {
   .item {
-    height: 175px;
+    height: 300px;
   }
 }
 @media only screen and (min-width: 480px) and (max-width: 767px) {
@@ -297,43 +307,35 @@ body {
   .grilla {
     grid-template-columns: 1fr 1fr 1fr;
   }
-
-  .item1 {
+  .grilla .item1 {
     grid-column: 1/2;
     grid-row: 1/2;
   }
-
-  .item2 {
+  .grilla .item2 {
     grid-column: 2/3;
     grid-row: 1/2;
   }
-
-  .item3 {
+  .grilla .item3 {
     grid-column: 3/4;
     grid-row: 1/2;
   }
-
-  .item4 {
+  .grilla .item4 {
     grid-column: 1/2;
     grid-row: 2/4;
   }
-
-  .item5 {
+  .grilla .item5 {
     grid-column: 2/3;
     grid-row: 2/3;
   }
-
-  .item6 {
+  .grilla .item6 {
     grid-column: 3/4;
     grid-row: 2/3;
   }
-
-  .item7 {
+  .grilla .item7 {
     grid-column: 1/2;
     grid-row: 3/4;
   }
-
-  .item8 {
+  .grilla .item8 {
     grid-column: 2/4;
     grid-row: 3/4;
   }
@@ -342,47 +344,38 @@ body {
   .grilla {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
-
-  .item {
+  .grilla .item {
     height: auto;
   }
-
-  .item1 {
+  .grilla .item1 {
     grid-column: 1/2;
     grid-row: 1/3;
   }
-
-  .item2 {
+  .grilla .item2 {
     grid-column: 2/3;
     grid-row: 1/2;
   }
-
-  .item3 {
+  .grilla .item3 {
     grid-column: 3/5;
     grid-row: 1/2;
   }
-
-  .item4 {
+  .grilla .item4 {
     grid-column: 2/3;
     grid-row: 2/4;
   }
-
-  .item5 {
+  .grilla .item5 {
     grid-column: 3/4;
     grid-row: 2/3;
   }
-
-  .item6 {
+  .grilla .item6 {
     grid-column: 4/5;
     grid-row: 2/3;
   }
-
-  .item7 {
+  .grilla .item7 {
     grid-column: 1/2;
     grid-row: 3/4;
   }
-
-  .item8 {
+  .grilla .item8 {
     grid-column: 3/5;
     grid-row: 3/4;
   }

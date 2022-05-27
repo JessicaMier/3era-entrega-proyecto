@@ -6,37 +6,46 @@ $sombreado: 0px 0px 10px rgb(248, 243, 234),
 $fuente: macondo,
 Times,
 serif;
-
+@mixin back {
+    border: 2px solid black;
+    background-size: cover;
+    background-position: center;
+}
 * {
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
 }
 
-
-
+/*---------------------------------------------nav------------------------------------*/
 nav {
     background-image: $color1;
-
-    .nav-item {
-        font-size: 18px;
-    }
-
+.nav-item {
+    font-size: 18px;
+    color: black;
     .nav-link {
         font-size: 18px;
-    }
-
+            &:hover{
+                font-size: 22px;
+                }
+            }
     .active {
         font-size: 20px;
         text-shadow: $sombreado;
-    }
-
-    :hover {
-        font-size: 20px;
-        color: aliceblue;
+        }
     }
 }
+/*-----------------------------------estilos generales body------------------------*/
+body {
+    background-image: url(media/img/fondito.jpeg);
+    background-position: bottom;
+    background-size: cover;
+}
 
+.encabezado {
+    font-family: $fuente;
+    text-shadow: $sombreado;
+}
 /*---------------------------------index-----------------------------------------*/
 header {
     display: flex;
@@ -51,8 +60,7 @@ header {
         position: relative;
         border-bottom: 5px solid rgb(48, 46, 46, 0.5);
         border-radius: 20px;
-    }
-
+        }
     .text-1 {
         color: rgb(2, 13, 22);
         position: absolute;
@@ -63,30 +71,15 @@ header {
         text-shadow: $sombreado;
         font-family: $fuente;
         font-weight: bolder;
-    }
-
+        }
     .text-1 span {
         text-transform: uppercase;
         font-family: $fuente;
         font-weight: bolder;
-    }
+        }
 }
-
-.jumbotron {
-    background-image: url(media/img/vegetales.jpg);
-    height: 550PX;
-    font-family: macondo, Times, serif;
-    font-size: 60px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: rgb(5, 5, 5);
-    text-shadow: $sombreado;
-    background-size: cover;
-    background-position: bottom;
-    flex-direction: column;
-}
-
+/*----------------------------------------------fin de encabezado index---------------------------------------------*/
+/*----------------------------------------------------inicio--------------------------------------------------------*/
 .opciones {
     @extend .tituloG;
     font-family: $fuente;
@@ -98,7 +91,6 @@ header {
     align-items: center;
     flex-wrap: wrap;
     margin: 10px;
-
     .lista {
         height: 350px;
         width: 350px;
@@ -106,18 +98,24 @@ header {
         border: 2px solid black;
         margin: 5px;
         font-family: $fuente;
-        font-size: 30px;
+        font-size: 32px;
         color: black;
         padding: 5px;
+        border-radius: 10px;
         .textList{
             font-family: cursive;
             background-color: rgb(26, 24, 22, 0.9);
-            color: aliceblue;
+            color: rgb(9, 10, 12);
             font-size: 34px;
             text-align: center;
             text-shadow: $sombreado;
             border-radius: 10px;
-        }
+            }
+        .estiloLista{
+            list-style: none;
+            text-align: center;
+            text-shadow: $sombreado;
+            }    
         }
     .uno{
         background-image: url(media/img/fideos.jpg);
@@ -133,34 +131,49 @@ header {
         background-size: cover;
         font-weight: bold;
         text-shadow: $sombreado;
-    }
+        list-style: none;
+        }
     .tres{
-        background-image: url(media/img/tarta.jpg);
-        background-position: center;
-        background-size: cover;
-        font-weight: bold;
-        text-shadow: $sombreado;
-    }
+        @extend .dos;
+        background-image: url(media/img/full.CanastitasCaprese.jpg);
+        }
+    .cuatro{
+        @extend .dos;
+        background-image: url(media/img/triplesMiga.jpg);
+        }
+    .cinco{
+        @extend .dos;
+        background-image: url(media/img/pizzaConJamon.jpg);
+        }
+    .seis{
+        @extend .dos;
+        background-image: url(media/img/conservas.jpg);
+        }
     }
 
 
 /*------------------------------------------------fin index-----------------------------------------*/
-body {
-    background-image: url(media/img/fondito.jpeg);
-    background-position: bottom;
-    background-size: cover;
-}
-
-.encabezado {
-    font-family: $fuente;
+/*--------------------------------inicio de encabezado, menu, galeria, contacto y novedades-------------------------*/
+.jumbotron {
+    background-image: url(media/img/vegetales.jpg);
+    height: 550PX;
+    font-family: macondo, Times, serif;
+    font-size: 60px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(5, 5, 5);
     text-shadow: $sombreado;
+    background-size: cover;
+    background-position: bottom;
+    flex-direction: column;
 }
-
+/*---------------------------fin encabezado general------------------------------------------------------------------*/
 /*-----------------------------------menu---------------------------*/
 .promoNueva {
     text-align: center;
     font-size: 30px;
-    display: block;
+    display: flex;
     background-color: black;
     color: aliceblue;
     text-transform: uppercase;
@@ -173,6 +186,7 @@ body {
 .promociones {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 /*-------------------mapa menu-------------------------------------*/
@@ -196,8 +210,7 @@ $colores in $promos {
         margin-bottom: 30px;
     }
 }
-
-
+/*-------------------------fin de menu-----------------------*/
 /*-----------------------galeria-----------------------------*/
 .tituloG {
     text-align: center;
@@ -216,68 +229,52 @@ $colores in $promos {
     display: grid;
     padding: 20px;
     gap: 10px;
-}
-
-.item {
-    border-radius: 7px;
-    box-shadow: 0 0 5px darkslategray;
-    transition: all 0.7s;
-}
-
-.item:hover {
-    transform: scale(1.05);
-    transition: all 0.7s;
-}
-
-@mixin back {
-    border: 2px solid black;
-    background-size: cover;
-    background-position: center;
-}
-
-.item1 {
-    @include back;
-    background-image: url(media/img/empanadas.fritas.jpg);
-}
-
-.item2 {
-    @include back;
-    background-image: url(media/img/panaderia.jpg);
-}
-
-.item3 {
-    @include back;
-    background-image: url(media/img/catering15.jpg);
-}
-
-.item4 {
-    @include back;
-    background-image: url(media/img/sushi.jpg);
-}
-
-.item5 {
-    @include back;
-    background-image: url(media/img/empanadas2.jpg);
-}
-
-.item6 {
-    @include back;
-    background-image: url(media/img/fideos.jpg);
-}
-
-.item7 {
-    @include back;
-    background-image: url(media/img/comidaGourmet.jpg);
-}
-
-.item8 {
-    @include back;
-    background-image: url(media/img/Pizza.jpg);
+    .item {
+        border-radius: 7px;
+        box-shadow: 0 0 5px darkslategray;
+        transition: all 0.7s;
+        &:hover {
+            transform: scale(1.05);
+            transition: all 0.7s;
+            }
+        }
+    .item1 {
+        @include back;
+        background-image: url(media/img/empanadas.fritas.jpg);
+    }
+    .item2 {
+        @include back;
+        background-image: url(media/img/panaderia.jpg);
+    }
+    .item3 {
+        @include back;
+        background-image: url(media/img/catering15.jpg);
+    }
+    .item4 {
+        @include back;
+        background-image: url(media/img/sushi.jpg);
+    }
+    .item5 {
+        @include back;
+        background-image: url(media/img/empanadas2.jpg);
+    }
+    .item6 {
+        @include back;
+        background-image: url(media/img/fideos.jpg);
+    }
+    .item7 {
+        @include back;
+        background-image: url(media/img/comidaGourmet.jpg);
+    }
+    .item8 {
+        @include back;
+        background-image: url(media/img/Pizza.jpg);
+    }
 }
 
 @media only screen and (min-width:320px) and (max-width:479) {
     .item {
-        height: 175px;
+        height: 300px;
     }
 }
 
@@ -285,104 +282,84 @@ $colores in $promos {
     .grilla {
         grid-template-columns: 1fr 1fr;
     }
-
 }
 
 @media only screen and (min-width:768px) and (max-width:1024px) {
     .grilla {
         grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    .item1 {
-        grid-column: 1/2;
-        grid-row: 1/2;
-    }
-
-    .item2 {
-        grid-column: 2/3;
-        grid-row: 1/2;
-    }
-
-    .item3 {
-        grid-column: 3/4;
-        grid-row: 1/2;
-    }
-
-    .item4 {
-        grid-column: 1/2;
-        grid-row: 2/4;
-    }
-
-    .item5 {
-        grid-column: 2/3;
-        grid-row: 2/3;
-    }
-
-    .item6 {
-        grid-column: 3/4;
-        grid-row: 2/3;
-    }
-
-    .item7 {
-        grid-column: 1/2;
-        grid-row: 3/4;
-    }
-
-    .item8 {
-        grid-column: 2/4;
-        grid-row: 3/4;
+        .item1 {
+            grid-column: 1/2;
+            grid-row: 1/2;
+            }
+        .item2 {
+            grid-column: 2/3;
+            grid-row: 1/2;
+            }
+        .item3 {
+            grid-column: 3/4;
+            grid-row: 1/2;
+        }
+        .item4 {
+            grid-column: 1/2;
+            grid-row: 2/4;
+        }
+        .item5 {
+            grid-column: 2/3;
+            grid-row: 2/3;
+        }
+        .item6 {
+            grid-column: 3/4;
+            grid-row: 2/3;
+        }
+        .item7 {
+            grid-column: 1/2;
+            grid-row: 3/4;
+        }
+        .item8 {
+            grid-column: 2/4;
+            grid-row: 3/4;
+        }
     }
 }
-
 @media only screen and (min-width:1024px) {
     .grilla {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        .item {
+            height: auto;
+        }
+        .item1 {
+            grid-column: 1/2;
+            grid-row: 1/3;
+        }
+        .item2 {
+            grid-column: 2/3;
+            grid-row: 1/2;
+        }
+        .item3 {
+            grid-column: 3/5;
+            grid-row: 1/2;
+        }
+        .item4 {
+            grid-column: 2/3;
+            grid-row: 2/4;
+        }
+        .item5 {
+            grid-column: 3/4;
+            grid-row: 2/3;
+        }
+        .item6 {
+            grid-column: 4/5;
+            grid-row: 2/3;
+        }
+        .item7 {
+            grid-column: 1/2;
+            grid-row: 3/4;
+        }
+        .item8 {
+            grid-column: 3/5;
+            grid-row: 3/4;
+        }
     }
-
-    .item {
-        height: auto;
-    }
-
-    .item1 {
-        grid-column: 1/2;
-        grid-row: 1/3;
-    }
-
-    .item2 {
-        grid-column: 2/3;
-        grid-row: 1/2;
-    }
-
-    .item3 {
-        grid-column: 3/5;
-        grid-row: 1/2;
-    }
-
-    .item4 {
-        grid-column: 2/3;
-        grid-row: 2/4;
-    }
-
-    .item5 {
-        grid-column: 3/4;
-        grid-row: 2/3;
-    }
-
-    .item6 {
-        grid-column: 4/5;
-        grid-row: 2/3;
-    }
-
-    .item7 {
-        grid-column: 1/2;
-        grid-row: 3/4;
-    }
-
-    .item8 {
-        grid-column: 3/5;
-        grid-row: 3/4;
-    }
-
 }
 
 /*---------------------------novedades---------------------------*/
@@ -409,16 +386,13 @@ $colores in $promos {
     background-color: rgb(58, 56, 56, 0.6);
     justify-content: center;
     margin-bottom: 20px;
-
     .form {
         min-width: 400px;
         flex: 1;
         text-align: center;
         padding: 30px;
         order: 5;
-
     }
-
     .formImput {
         font-size: 20px;
         background: $color1;
@@ -427,7 +401,6 @@ $colores in $promos {
         margin: 10px;
         border-bottom: 3px solid rgb(2, 2, 1);
     }
-
     .ubica {
         text-align: center;
         color: black;
@@ -437,7 +410,6 @@ $colores in $promos {
         font-style: italic;
         text-shadow: $sombreado;
     }
-
     .formImg {
         flex: 1;
         display: flex;
@@ -445,7 +417,6 @@ $colores in $promos {
         min-width: 300px;
         max-width: 400px;
         order: 2;
-
         img {
             display: flex;
             width: 60%;
@@ -453,7 +424,6 @@ $colores in $promos {
             text-align: center;
         }
     }
-
     .terminos {
         font-size: 24px;
         padding: 10px;
@@ -461,13 +431,11 @@ $colores in $promos {
         border-radius: 10px;
         background: $color1
     }
-
     .casilla-terminos {
         height: 30px;
         width: 30px;
         margin: 15px
     }
-
     .text-terminos {
         @extend .ubica;
     }
@@ -475,7 +443,6 @@ $colores in $promos {
 
 .mapa {
     text-align: center;
-
     p {
         background-color: black;
         color: aliceblue;
@@ -492,7 +459,6 @@ $colores in $promos {
     position: fixed;
     right: 20px;
     bottom: 150px;
-
     img {
         width: 100%;
         height: 100%;
@@ -509,7 +475,6 @@ footer {
     text-align: center;
     text-transform: capitalize;
     padding: 20px;
-
     p {
         font-family: macono;
         font-size: 40px;
@@ -520,18 +485,16 @@ footer {
         font-family: $fuente;
         text-transform: uppercase;
     }
-
     i {
         height: 80px;
         width: 80px;
         font-size: 50px;
         color: black;
         transition: all 1s;
-    }
-
-    i:hover {
+        &:hover {
         color: rgb(10, 59, 102);
         transform: scale(1.3);
         transition: all 0.7s;
+        }
     }
 }
